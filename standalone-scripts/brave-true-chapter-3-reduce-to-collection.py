@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 '''
 Clojure for the Brave and True -- Chapter 3
 https://www.braveclojure.com/do-things/
@@ -12,7 +14,7 @@ build a result,” which is agnostic about the type of result returned."
 
 from functools import reduce
 
-z = [0, 2, 0, 2, 2, 0, 2]
+z = [0, 1, 2, 0, 9, 2, 2, 1, 2, 8]
 
 # Note that 'collection' is passed by reference, so the original will get
 # modified too. However, this doesn't cause any problems in this example
@@ -25,7 +27,7 @@ def collect_and_duplicate_twos(collection, item):
     
     return collection
 
-zz = reduce(collect_duplicate_two, z, [])
+zz = reduce(collect_and_duplicate_twos, z, [])
 
 print(z)
 print(zz)
